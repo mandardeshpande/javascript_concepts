@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+  
+  function doIt() {
+    // console.log('did it');
+
+    // const t = 4;
+
+    // if (true === NaN) {
+    //   console.log('true');
+    // } else if (t === 4) {
+    //   console.log('t is 4');
+    // } else {
+    //   console.log('false');
+    // }
+
+    // switch (t) {
+    //   case '4':
+    //     console.log('4');
+    //     break;
+    //   default:
+    //     console.log('default');
+    // }
+
+    // for (let t=0; t<10; t++) {
+    //   console.log(t);
+    // }
+
+    // const person = { firstName: 'Bob', lastName: 'Smith' };
+    // for (let propName in person) {
+    //   console.log(propName);
+    // }
+
+    // const ages = [ 32, 45, 78, 12 ];
+
+    // function* getAges() {
+    //   console.log('called getAges 1');
+    //   yield 32;
+    //   console.log('called getAges 2');
+    //   yield 45;
+    //   console.log('called getAges 3');
+    //   yield 78;
+    //   console.log('called getAges 4');
+    //   yield 12;
+    // }    
+
+    // for (let age of getAges()) {
+    //   console.log('looped!');
+    //   console.log(age);
+    // };
+
+    // // Symbol.iterator
+    // console.log(arguments);
+
+    // let x = 0;
+    // do {
+    //   console.log(x++);
+    // }  while (x<10);
+
+    let t = 2;
+
+    try {
+      // throw "the world ended"
+      return t;
+    } catch(err){
+      console.log(err);
+    } finally {
+      t = 4;
+      console.log('all done', t);
+    }
+
+
+    // return {
+    //   id: 2
+    // };
+  }
+
+  console.log(doIt());  
+
+</script>
+
+

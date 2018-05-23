@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+
+  function doIt() {
+
+    const nums = [ 1, 2, 3, 4, 5 ];
+
+    const numsDoubled = nums.map(num => {
+      return num * 2; 
+    });
+
+    const numsFiltered = numsDoubled.filter(num => num > 5);
+
+    console.log(nums);
+    console.log(numsDoubled);
+    console.log(numsFiltered);
+  }
+
+  doIt();
+
+
+</script>
+
+

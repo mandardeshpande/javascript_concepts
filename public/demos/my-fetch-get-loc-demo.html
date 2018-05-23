@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  // hint code
+  // const propose = () => {
+  //   // promise wraps the async operation because promises help manage async operations
+  //   return new Promise((resolve, reject) => {
+  //     // task 1
+  //     console.log('she is deciding..');
+  //     // async operation is in the promise
+  //     setTimeout(function() {
+  //       // task 2
+  //       // resolve is available via closure
+  //       resolve('she is madly in love with mandar...');
+  //     }, 6000);
+  //   });
+  // };
+
+
+  // create the following API demonstrated here
+
+  const myFetch = (url, options) => new Promise((resolve, reject) => {
+
+    const opts = {
+      method: 'GET',
+      ...options,
+    };
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('readystatechange', () => {
+
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        resolve(JSON.parse(xhr.responseText));
+      }
+
+    });
+
+    xhr.open(opts.method, url);
+
+    if (opts.headers) {
+      Object.keys(opts.headers).forEach(headerKey => {
+        xhr.setRequestHeader(headerKey, opts.headers[headerKey]);
+      });
+    }
+
+    if (opts.body) {
+      xhr.send(opts.body);
+    } else {
+      xhr.send();
+    }
+
+  });
+
+  myFetch('http://localhost:3010/cars')
+    .then(cars => console.log(cars));
+
+
+  const getMyLocation = () =>
+    new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+      } else {
+        reject('geolocation not supported');
+      }
+    });
+
+  getMyLocation()
+    .then(pos => console.log(pos))
+    .catch(err => console.log(err));
+
+  getMyLocation()
+    .then(pos => myFetch('http://localhost:3010/positions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(pos),
+    }))
+    .catch(err => myFetch('http://localhost:3010/positions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: err.message }),
+    }));
+
+</script>
+
+

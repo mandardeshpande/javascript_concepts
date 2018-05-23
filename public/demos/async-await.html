@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  const propose = () => {
+    return new Promise((resolve, reject) => {
+      console.log('she is deciding..');
+      setTimeout(function() {
+        resolve('she is madly in love with mandar...');
+      }, 6000);
+    });
+  };
+
+  const findLocation = () => {
+    return new Promise((resolve, reject) => {
+      console.log('looking for a location..');
+      setTimeout(function() {
+        reject('could not find a location');
+      }, 6000);
+    });
+  };
+
+  const findWeddingClothes = () => {
+    return new Promise((resolve, reject) => {
+      console.log('looking for clothes..');
+      setTimeout(function() {
+        resolve('found clothes to wear');
+      }, 6000);
+    });
+  };
+
+  const doWeddingProcess = async () => {
+
+    try {
+      const proposalResult = await propose();
+      console.log(proposalResult);
+      const locationResult = await findLocation();
+      console.log(locationResult);
+      const weddingClothesResult = await findWeddingClothes();
+      console.log(weddingClothesResult);
+    } catch (err) {
+      console.log('error occurred: ' + err);
+    }
+
+  };
+
+  //doWeddingProcess().then(() => console.log('all done'));
+
+  function* nums() {
+    console.log('in nums 1');
+    yield 1;
+    console.log('in nums 2');
+    yield 2;
+    console.log('in nums 3');
+    yield 3;
+  }
+
+  for (let num of nums()) {
+    console.log('in loop');
+    console.log(num);
+  }
+
+
+</script>
+
+

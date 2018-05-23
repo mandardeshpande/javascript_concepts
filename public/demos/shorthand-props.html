@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  const _firstName = 'Bob';
+  const lastNameProp = 'lastName';
+
+  const person = {
+
+    // shorthand property
+    _firstName,
+
+    // computed property
+    [ lastNameProp ]: 'Smith',
+
+    // shorthand function property
+    getFullName() {
+      return this.firstName + ' ' + this.lastName;
+    },
+
+    get firstName() {
+      return this._firstName;
+    },
+
+    set firstname(value) {
+      this._firstName = value;
+    },
+
+  };
+
+  const getNameObj = ({ firstName, lastName }) => ({
+    firstName, lastName
+  });
+
+  console.log(getNameObj(person));
+
+
+</script>
+
+

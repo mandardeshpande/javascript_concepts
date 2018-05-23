@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  const person = {
+    firstName: 'Bob',
+    lastName: 'Smith',
+  };
+
+  Object.preventExtensions(person);
+  console.log(Object.isExtensible(person));
+
+  // person.age = 32;
+
+  Object.seal(person);
+  console.log(Object.isSealed(person));
+
+  // Object.defineProperty(person, 'firstName', {
+  //   configurable: true,
+  //   enumerable: false,
+  //   writable: true,
+  //   value: 'Bob',
+  // });
+
+  Object.freeze(person);
+  console.log(Object.isFrozen((person)));
+
+  // person.firstName = 'Jenny';
+
+  const person2 = Object.assign({}, person);
+
+  person2.age = 32;
+  person2.firstName = 'Jenny';
+
+  console.dir(person2);
+
+
+</script>
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  const person = {
+    getFullName() {
+      return this.firstName + ' ' + this.lastName;
+    },
+  };
+
+  const p1 = Object.create(person);
+  p1.firstName = 'Bob';
+  p1.lastName = 'Smith';
+
+  const p2 = Object.create(person);
+  p2.firstName = 'Jane';
+  p2.lastName = 'Thomas';
+
+  console.log(p1.getFullName());
+  console.log(p2.getFullName());
+
+  console.dir(p1);
+  console.dir(p2);
+  console.log(p1.getFullName === p2.getFullName);
+
+  Array.prototype.timRocks = function() {
+    console.log(this);
+  };
+
+  Array.prototype.map = function() {
+    console.log('you have been hacked!');
+  };
+
+  const nums1 = [1,2,3,4];
+  const nums2 = [5,6,7,8];
+
+  console.log(nums1.map(function() {
+     
+  }));
+
+  // console.log(nums1.map === nums2.map);
+
+  // console.log(nums1.map === Array.prototype.map);
+  // console.dir(nums1);
+
+  // console.log(Object.getPrototypeOf(nums1) === Array.prototype);
+
+  // nums1.timRocks();
+
+</script>
+
+

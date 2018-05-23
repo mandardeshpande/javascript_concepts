@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  class MyPromise {
+
+    static resolveFn(result) {
+      this.resolveFuncs.forEach(resolveFunc => {
+        resolveFunc(result);
+      });
+    }
+
+    static rejectFn(result) {
+      this.rejectFuncs.forEach(rejectFunc => {
+        rejectFunc(result);
+      });
+    }
+
+    constructor(fn) {
+      this.resolveFuncs = [];
+      this.rejectFuncs = [];
+      fn(MyPromise.resolveFn.bind(this), MyPromise.rejectFn.bind(this))
+    }
+
+    then(fn) {
+      this.resolveFuncs.push(fn);
+    }
+
+    catch(fn) {
+      this.rejectFuncs.push(fn);
+    }
+  }
+
+  const p = new MyPromise((resolve, reject) => {
+
+    setTimeout(() => resolve('test'), 2000);
+
+  });
+
+  p.then(res => console.log('it worked: ' + res));
+
+  console.log('waiting');
+
+
+</script>
+
+

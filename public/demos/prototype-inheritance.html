@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  const parent = {
+    name: 'parent',
+    amt: 2000,
+    address: {
+      city: 'Mountain View',
+      country: 'Republic of California',
+    },
+  };
+
+  const child = Object.create(parent);
+  child.name = 'child';
+  console.log(child.amt);
+
+  parent.amt = 4000;
+  console.log(child.amt);
+
+  child.amt = 15;
+  console.log(child.amt);
+
+  delete child.amt;
+  console.log(child.amt);
+
+  console.log(child.address.city);
+
+  child.address.city = 'Paris';
+  child.address.country = 'Texas';
+
+  console.log(child.address.city);
+  console.log(parent.address.city);
+
+console.dir(child);
+
+
+</script>
+
+

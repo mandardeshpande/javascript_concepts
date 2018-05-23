@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  // const person = {
+  //   getFullName() {
+  //     return this.firstName + ' ' + this.lastName;
+  //   },
+  // };
+
+  // const p1 = Object.create(person);
+  // p1.firstName = 'Bob';
+  // p1.lastName = 'Smith';
+
+  function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  Person.prototype.getFullName = function() {
+    return this.firstName + ' ' + this.lastName;
+  };
+
+  const p1 = new Person('Bob', 'Smith');
+  console.log(p1.getFullName());
+  console.dir(p1);
+
+  class Person2 {
+
+    constructor(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+
+    getFullName() {
+      return this.firstName + ' ' + this.lastName;
+    }
+  }
+
+  const p2 = new Person2('Jane', 'Thomas');
+  console.log(p2.getFullName());
+  console.dir(p2);
+
+  console.dir(Person);
+  console.dir(Person2);
+
+  // console.log(p1.getFullName());
+  // console.log(p2.getFullName());
+
+
+</script>
+
+

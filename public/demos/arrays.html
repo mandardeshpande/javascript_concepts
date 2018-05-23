@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+
+  function doIt() {
+
+
+    const nums = [ 3,4,1,2 ];
+  
+    // immutable operations
+
+    let newNums = nums.concat(9);
+    newNums = newNums.slice(0, newNums.length - 1);
+    newNums = [9].concat(newNums);
+    newNums = newNums.slice(1);
+    newNums = newNums.slice(0,2).concat(9).concat(newNums.slice(2));
+    // newNums = newNums.slice(0,1).concat(newNums.slice(4));
+    // console.log(newNums.slice(3,-2));
+
+    newNums = newNums.slice().sort();
+
+    // newNums Copy
+    // newNums.slice()
+    // newNums.slice(0)
+    // newNums.concat()
+
+    console.dir(nums);
+    console.dir(newNums);
+    console.log(nums === newNums);
+
+    // mutable operations
+    // console.log(nums.push(9));
+    // console.log(nums.pop());
+    // console.log(nums.unshift(-9));
+    // console.log(nums.shift());
+    // nums.splice(2, 0, 9);
+    // console.log(nums.splice(1, 3, 55));
+    // nums.sort(function(a,b) {
+    //   return b-a;
+    // });
+    //nums.reverse();
+
+  }
+
+  doIt();
+
+
+</script>
+
+

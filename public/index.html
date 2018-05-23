@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  // const set = new Set();
+
+  // set.add('a');
+  // set.add('b');
+  // set.add('c');
+  // set.add('a');
+
+  // console.dir(Array.from(set.entries()));
+
+  const amyKey = { id: 1, name: 'Amy' };
+  const bobKey = { id: 2, name: 'Bob' };
+
+  // const map = Object.create(null);
+  // console.dir(map);
+
+  // map[amyKey.toString()] = 23;
+  // map[bobKey.toString()] = 56;
+
+  // console.log(amyKey.toString());
+  // console.log(bobKey.toString());
+
+  // console.log(map[amyKey]);
+
+  // const nums = [1,2,3,4];
+  // console.log(nums['2']);
+
+  const map = new Map();
+
+  map.set(amyKey, 23);
+  map.set(bobKey, 56);
+
+  console.log(map.get(amyKey));
+  
+
+</script>
+
+

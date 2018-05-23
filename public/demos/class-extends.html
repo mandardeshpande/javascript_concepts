@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  class Person {
+
+    constructor(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+
+    getFullName() {
+      return this.firstName + ' ' + this.lastName;
+    }
+  }
+
+  class Student extends Person {
+
+    constructor(studentId, firstName, lastName) {
+      super(firstName, lastName);
+      this.studentId = studentId;
+    }
+
+    getRecordInfo() {
+      return `${this.studentId} ${this.lastName.toUpperCase()}, ${this.firstName}`;
+    }
+  }
+
+  const s = new Student(1, 'Jane', 'Thomas');
+  console.log(s.getFullName());
+  console.log(s.getRecordInfo());
+  console.dir(s);
+
+
+  function Person2(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  Person2.prototype.getFullName = function() {
+    return this.firstName + ' ' + this.lastName;
+  };
+
+  function Student2(studentId, firstName, lastName) {
+    this._super(firstName, lastName);
+    this.studentId = studentId;
+  }
+
+  Student2.prototype = Object.create(Person2.prototype);
+  Student2.prototype.constructor = Student2;
+  Student2.prototype._super = Person2;
+
+  Student2.prototype.getRecordInfo = function() {
+    return `${this.studentId} ${this.lastName.toUpperCase()}, ${this.firstName}`;
+  };
+  
+  const s2 = new Student2(1, 'Jane', 'Thomas');
+  console.log(s2.getFullName());
+  console.log(s2.getRecordInfo());
+
+  console.dir(s2);
+
+</script>
+
+

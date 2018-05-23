@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  class Person {
+
+    static create(fullName) {
+      // const nameParts = fullName.split(' ');
+      // return new Person(nameParts[0], nameParts[1]);
+
+      return new Person(...fullName.split(' '));
+    }
+
+    constructor(firstName, lastName) {
+
+      Object.defineProperty(this, '_firstName', {
+        configurable: false,
+        enumerable: false,
+        writable: true,
+        value: firstName,
+      });
+
+      this.lastName = lastName;
+    }
+
+    get firstName() {
+      return this._firstName;
+    }
+
+    set firstName(value) {
+      this._firstName = value;
+    }
+
+    getFullName() {
+      return this.firstName + ' ' + this.lastName;
+    }
+  }
+
+  console.dir(Person.create('Bill Gates'));
+
+
+  class Student extends Person {
+
+    constructor(studentId, firstName, lastName) {
+      super(firstName, lastName);
+      this.studentId = studentId;
+    }
+
+    getRecordInfo() {
+      return `${this.studentId} ${this.lastName.toUpperCase()}, ${this.firstName}`;
+    }
+
+    getFullName() {
+      return super.getFullName().toUpperCase();
+    }
+  }
+
+  const s = new Student(1, 'Jane', 'Thomas');
+  console.log(s.getFullName());
+  console.log(s.getRecordInfo());
+
+
+
+</script>
+
+

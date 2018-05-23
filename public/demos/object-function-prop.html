@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  console.dir(this);
+
+  const person = {
+    firstName: 'Bob', lastName: 'Smith',
+    getFullName: function() {
+      return this.firstName + ' ' + this.lastName;
+    },
+  };
+
+  const person2 = {
+    firstName: 'Jenny', lastName: 'Thomas',
+    getFullName: person.getFullName,
+  };
+
+  const person2Name = person2.getFullName;
+
+
+  console.log(person.getFullName());
+  console.log(person2.getFullName());
+  console.log(person.getFullName === person2.getFullName);
+
+setTimeout(function() {
+
+}, 2000)
+
+
+</script>
+
+

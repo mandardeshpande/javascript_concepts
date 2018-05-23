@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  var t = undefined;
+
+  console.log(typeof t);
+
+  t = 'Hi!';
+  console.log(typeof t);
+
+  t = 45;
+  console.log(typeof t);
+
+  t = false;
+  console.log(typeof t);
+
+  t = Symbol('some symbol');
+  console.log(typeof t);
+
+  t = null;
+  console.log(typeof t);
+
+  // object literal syntax
+  t = {
+    id: 2,
+    name: 'Test',
+  };
+  console.log(typeof t);
+
+  // array literal syntax
+  t = [ 1, 2, 3, 4 ];
+  console.log(typeof t);
+
+  t = function() {
+    console.log('test');
+  };
+  console.log(typeof t);
+  
+  console.dir(t);  
+
+
+</script>
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+  
+  //doIt();
+
+  // function declaration
+  // function doIt() {
+  //   console.log('did it');
+  // }
+
+  // var doIt declaration is hoisted
+  // assignment is not hoisted
+  // function expression
+  var doIt = function(a = 2, b = 5, c = 8) {
+    console.log('did it');
+    console.log(a,b,c);
+    console.dir(Array.isArray(arguments));
+    console.dir(Array.from(arguments));
+  };
+
+  console.dir(doIt);
+
+  //doIt();
+  
+
+</script>
+
+

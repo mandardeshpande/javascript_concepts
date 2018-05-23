@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  const person = {
+    age: 23,
+    
+  };
+
+  // person.firstName = 'Bob';
+
+  Object.defineProperty(person, '_firstName', {
+    writable: true,
+    value: 'Bob',
+  });
+
+  Object.defineProperty(person, 'firstName', {
+    configurable: false,
+    enumerable: true,
+    get: function() {
+      console.log('getting _firstName');
+      return this._firstName;
+    },
+    set: function(value) {
+      console.log('setting _firstName');
+      this._firstName = value;
+    },
+  });
+
+  console.log(person.firstName);
+  person.firstName = 'Tim';
+  person._firstName = 'Johnny';
+  console.log(person._firstName);
+
+  // Object.defineProperty(person, 'firstName', {
+  //   configurable: false,
+  //   enumerable: false,
+  //   writable: true,
+  //   value: 'Bob',
+  // });
+
+  console.log('for-in loop');
+  for (let propName in person) {
+    console.log(propName + ': ' + person[propName]);
+  }
+
+  console.log('Object.keys loop');
+  for (let propName of Object.keys(person)) {
+    console.log(propName + ': ' + person[propName]);
+  }
+
+  console.log('Object.getOwnPropertyNames loop');
+  for (let propName of Object.getOwnPropertyNames(person)) {
+    console.log(propName + ': ' + person[propName]);
+  }
+
+</script>
+
+

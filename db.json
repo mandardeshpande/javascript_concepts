@@ -1,0 +1,49 @@
+{
+  "positions": [
+    {
+      "id": 1
+    },
+    {
+      "message": "test error",
+      "id": 2
+    },
+    {
+      "message": "Network location provider at 'https://www.googleapis.com/' : Returned error code 403.",
+      "id": 3
+    }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "make": "Ford",
+      "model": "Fusion Hybrid",
+      "year": 2016,
+      "color": "red",
+      "price": 26000
+    },
+    {
+      "id": 2,
+      "make": "Chevrolet",
+      "model": "Volt",
+      "year": 2017,
+      "color": "blue",
+      "price": 32000
+    },
+    {
+      "id": 3,
+      "make": "Tesla",
+      "model": "S",
+      "year": 2015,
+      "color": "black",
+      "price": 100000
+    },
+    {
+      "make": "Ford",
+      "model": "Fusion",
+      "year": 2015,
+      "color": "black",
+      "price": 25000,
+      "id": 4
+    }
+  ]
+}

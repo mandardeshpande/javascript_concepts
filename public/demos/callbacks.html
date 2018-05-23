@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  // after all three timeouts have completed run the allDone function
+  // do not change the timeout delays
+  // do not nest all of the timeouts inside of each other
+  // and when the last one finishes immediate execute allDone
+
+  function allDone() {
+    console.log('all done');
+  }
+
+  let counter = 0;
+
+  counter++;
+  setTimeout(function() {
+    console.log('a');
+    counter--;
+    if (counter === 0) {
+      allDone();
+    };
+  }, 2000);
+
+  counter++;
+  setTimeout(function() {
+    console.log('b');
+    counter--;
+    if (counter === 0) {
+      allDone();
+    };
+  }, 1000);
+
+  counter++;
+  setTimeout(function() {
+    console.log('c');
+    counter--;
+    if (counter === 0) {
+      allDone();
+    };
+  }, 3000);
+
+  // pyramid of doom
+  // chain asynchronous operations
+  // setTimeout(function() {
+  //     console.log('a')
+
+  //     setTimeout(function() {
+  //         console.log('b')
+
+  //         setTimeout(function() {
+  //             console.log('c')
+  //         }, 500);
+  //     }, 1000);
+  // }, 2000);
+
+  // console.log('made it here');
+
+</script>
+
+

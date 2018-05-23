@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<title>Welcome to Introduction to ES2017!</title>
+<link rel="icon" href="data:,">
+<link href="css/site.css" rel="stylesheet">
+
+<main>
+  <h1>Welcome to Introduction to ES2017 for React + GraphQL Developers!</h1>
+
+  <input type="text" id="test-field" value="23">
+
+</main>
+
+<script src="js/bundle.js"></script>
+
+<script>
+
+  'use strict';
+
+  // const p = new Promise((resolve) => {
+
+  //   setTimeout(() => {
+  //     resolve('a')
+  //   }, 2000);
+
+  // });
+
+  const out = res => console.log(res);
+
+  const p1 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+  const p2 = new Promise(resolve => setTimeout(() => resolve('b'), 4000));
+  const p3 = new Promise((resolve, reject) => setTimeout(() => reject('c'), 6000));
+  const p4 = new Promise(resolve => setTimeout(() => resolve('d'), 8000));
+
+  p1.then(out);
+  p2.then(out);
+  p3.then(out).catch(res => console.log('rejected: ' + res));
+  p4.then(out);
+
+  const p5 = Promise.all([p1,p2]);
+
+  p5.then(res => console.log('p1 and p2:' + res));
+
+  Promise.all([p5,p3,p4])
+    .then(out)
+    .catch(res => console.log('one failed: ' + res));
+
+
+
+</script>
+
+
